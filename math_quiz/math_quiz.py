@@ -1,21 +1,21 @@
 import random
 
 
-def function_A(min, max):
+def generate_num1(min, max):
     """
     Returns a random integer from the range [min, max].
     """
     return random.randint(min, max)
 
 
-def function_B():
+def generate_operation():
     """
     Returns a random operator from the set {+, -, *}.
     """
     return random.choice(['+', '-', '*'])
 
 
-def function_C(a, b, o):
+def operation(a, b, o):
     """
     Returns a tuple (p, a), where p is a string representing the problem
     and a is the answer to the problem.
@@ -41,11 +41,11 @@ def math_quiz():
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(task):
-        n1 = function_A(1, 10)
-        n2 = function_A(1, 5.5)
-        o = function_B()
+        n1 = generate_num1(1, 10)
+        n2 = generate_num1(1, 5.5)
+        o = generate_operation()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = operation(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")   # ask user for answer
         useranswer = int(useranswer)   # convert useranswer to integer
